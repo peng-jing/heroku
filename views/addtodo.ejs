@@ -1,0 +1,16 @@
+<h1>Add ToDo</h1>
+
+<% if(username) { %>
+	<p>Hi <%= username %></p>
+	<a href="/logout">登出</a>
+<% } else { %>
+	你還沒登入 
+	<a href="/register">註冊</a>
+	<a href="login">登入</a>
+<% } %>
+
+<form method="POST" action="/todos">
+	title <input type="text" name="title">
+	content <input type="text" name="content">
+	<input type="submit">
+</form>

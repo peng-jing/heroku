@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<%- include('../template/head') %>
+  </head>
+	<%- include('../template/navbar') %>
+	
+	<div class="container">
+		<legend>Login</legend>
+		<% if (errorMessage && errorMessage.length>0) { %>
+			<h2 class="p-3 mb-2 bg-danger text-white"><%= errorMessage %></h2>
+		<% } %>
+		<form method="POST" action="/login">
+		  <div class="mb-3">
+		    <label for="username" class="form-label">Username</label>
+		    <input type="text" name="username" class="form-control" id="username">
+		  </div>
+		  <div class="mb-3">
+		    <label for="password" class="form-label">Password</label>
+		    <input type="password" name="password" class="form-control" id="password">
+		  </div>
+		  <button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+	
+</html>
+
+
