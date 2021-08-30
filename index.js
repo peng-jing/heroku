@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const flash = require('connect-flash')
 const session = require('express-session')
 const app = express()
-const port = 5001
+const port = process.env.PORT || 5001
 
 const userController = require('./controllers/c_user')
 const boardController = require('./controllers/c_board')
