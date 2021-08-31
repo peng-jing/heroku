@@ -16,7 +16,6 @@ const board = {
 			req.flash('errorMessage', err.toString())
 			return next()
 		})
-		
 	},
 	addComment: (req, res, next) => {
 		const {content} = req.body
