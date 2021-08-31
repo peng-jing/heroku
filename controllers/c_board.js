@@ -9,7 +9,9 @@ const board = {
         ['id', 'DESC']
       ]
     }).then(comments => {
-      res.render('board/comments')
+      res.render('board/comments', {
+				comments
+			})
 		}).catch(err => {
 			req.flash('errorMessage', err.toString())
 			return next()
