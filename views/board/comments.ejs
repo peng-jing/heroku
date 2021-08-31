@@ -5,8 +5,6 @@
   </head>
   <%- include('../template/navbar') %>
   <div class="container">
-		
-
 		<form method="POST" action="/comments">
 			<div class="mb-3">
 		    <label class="form-label">留言</label>
@@ -15,22 +13,7 @@
 		  <button type="submit" class="btn btn-primary">Submit</button>
 		</form>
 
-		<% comments.forEach(function(comment) { %>
-	
-			<div class="card mt-3 mb-3">
-				<div class="card-body">
-				<h5 class="card-title"><%= comment.User.nickname %></h5>
-				<h6 class="card-subtitle mb-2 text-muted"><%= comment.create_at %></h6>
-				<p class="card-text"><%= comment.id + ': ' + comment.content %></p>
-				<% if (username === comment.User.username) { %>
-					<a href="/update_comment/<%= comment.id %>" class="card-link">編輯</a>
-						<a href="/delete_comment/<%= comment.id%>" class="card-link">刪除</a>
-					<% } %>
-				</div>
-			</div>
-
-		<% }) %>
-   
+		
 
 
 		
