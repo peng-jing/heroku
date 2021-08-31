@@ -1,5 +1,4 @@
 const express = require('express')
-const bodyParser = require('body-parser')
 const flash = require('connect-flash')
 const session = require('express-session')
 const app = express()
@@ -17,8 +16,8 @@ app.use(session({
 
 app.use(flash())
 
-app.use(bodyParser.urlencoded({ extended: false })) // use 表示全部檔案都要套用
-app.use(bodyParser.json())
+app.use(express.urlencoded({ extended: false })) // use 表示全部檔案都要套用
+app.use(express.json())
 
 app.use((req, res, next) => {
 	res.locals.username = req.session.username
@@ -45,5 +44,5 @@ app.get('/delete_comment/:id', boardController.handleDelete, redirectBack)
 
 
 app.listen(port, () => {
-	console.log(`Example app listening at http://localhost:${port}`)
+	console.log(`Example app listening at ${port}`)
 })
