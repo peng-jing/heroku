@@ -9,7 +9,7 @@ const board = {
         ['id', 'DESC']
       ]
     }).then(comments => {
-      res.render('board/comments', {
+      res.render('index', {
 				comments
 			})
 		}).catch(err => {
