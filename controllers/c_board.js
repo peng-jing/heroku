@@ -9,6 +9,7 @@ const board = {
         ['id', 'DESC']
       ]
     }).then(comments => {
+		console.log('c_board.js的comments:', comments)
       res.render('index', {
 				comments
 			})

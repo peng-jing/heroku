@@ -12,7 +12,7 @@ app.use(session({
   secret: 'keyboard cat',
   resave: false,
   saveUninitialized: true,
-  cookie: { maxAge: 86400000 }
+  cookie: { secure: false }
 }))
 
 app.use(flash())
@@ -30,7 +30,7 @@ function redirectBack(req, res, next) {
 	res.redirect('back')
 	next()
 }
-
+console.log("index.js step1")
 app.get('/', boardController.getComments, redirectBack)
 app.post('/comments', boardController.addComment, redirectBack)
 app.get('/register', userController.register)
