@@ -9,10 +9,10 @@ const board = {
         ['id', 'DESC']
       ]
     }).then(comments => {
-		console.log('c_board.js的comments:', comments)
       res.render('index', {
 				comments
 			})
+      console.log('c_board.js的comments:', comments)
 		}).catch(err => {
 			req.flash('errorMessage', err.toString())
 			return next()

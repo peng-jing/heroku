@@ -30,18 +30,18 @@ function redirectBack(req, res, next) {
 	res.redirect('back')
 	next()
 }
-console.log("index.js step1")
+console.log("index.js 首頁")
 app.get('/', boardController.getComments, redirectBack)
-app.post('/comments', boardController.addComment, redirectBack)
-app.get('/register', userController.register)
-app.post('/register', userController.handleRegister, redirectBack)
-app.get('/logout', userController.handleLogout)
-app.get('/login', userController.login)
-app.post('/login', userController.handleLogin, redirectBack)
+// app.post('/comments', boardController.addComment, redirectBack)
+// app.get('/register', userController.register)
+// app.post('/register', userController.handleRegister, redirectBack)
+// app.get('/logout', userController.handleLogout)
+// app.get('/login', userController.login)
+// app.post('/login', userController.handleLogin, redirectBack)
 
-app.get('/update_comment/:id', boardController.updateComment, redirectBack)
-app.post('/update_comment/:id', boardController.handleUpdate, redirectBack)
-app.get('/delete_comment/:id', boardController.handleDelete, redirectBack)
+// app.get('/update_comment/:id', boardController.updateComment, redirectBack)
+// app.post('/update_comment/:id', boardController.handleUpdate, redirectBack)
+// app.get('/delete_comment/:id', boardController.handleDelete, redirectBack)
 
 
 app.listen(port, () => {
