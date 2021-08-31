@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: false })) // use 表示全部檔案都
 app.use(bodyParser.json())
 
 app.use((req, res, next) => {
-	res.locals.username = req.session.username || undefined
+	res.locals.username = req.session.username
 	res.locals.errorMessage = req.flash('errorMessage')
 	next()
 })
