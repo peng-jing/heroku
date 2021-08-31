@@ -6,9 +6,7 @@
   <%- include('../template/navbar') %>
   <div class="container">
 		<h2><%= errorMessage %></h2>
-		<% if(username) { %>
-			<p>Hi <%= username %></p>
-		<% } %>
+
 		<form method="POST" action="/comments">
 			<div class="mb-3">
 		    <label class="form-label">留言</label>
