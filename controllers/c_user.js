@@ -49,8 +49,8 @@ const userController = {
 				req.flash('errorMessage', '使用者不存在')
 				return next()
 			}
-      bcrypt.compare(password, user.password, function(err, result) {
-    		if (err | !result) {
+      bcrypt.compare(password, user.password, function(err, isSuccess) {
+    		if (err | !isSuccess) {
 		    	req.flash('errorMessage', '密碼錯誤')
 		    	return next()
 		    }
