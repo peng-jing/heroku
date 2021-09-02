@@ -2,7 +2,7 @@ const db = require('../models')
 const User = db.User
 const bcrypt = require('bcrypt')
 const saltRounds = 10;
-const userController = {
+const user = {
 	register: (req, res) => {
 		res.render('user/register')
 	},
@@ -71,5 +71,5 @@ const userController = {
 	
 }
 
-module.exports = userController
+module.exports = user
 
